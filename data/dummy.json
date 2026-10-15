@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "interests": ["reading", "traveling", "coding"]
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "interests": ["painting", "music", "hiking"]
+  },
+  {
+    "id": 3,
+    "name": "Alice Johnson",
+    "interests": ["photography", "cooking", "yoga"]
+  }
+]
