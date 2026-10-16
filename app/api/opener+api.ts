@@ -45,7 +45,10 @@ export async function POST(request: Request) {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({
-					model: process.env.OPENROUTER_MODEL,
+					models: (process.env.OPENROUTER_MODELS ?? "")
+						.split(",")
+						.map((model) => model.trim())
+						.filter(Boolean),
 					max_tokens: 60,
 					messages: [
 						{
