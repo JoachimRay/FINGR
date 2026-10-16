@@ -1,4 +1,3 @@
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Text} from "@/components/ui/text";
 
 import {useState} from "react";
@@ -41,20 +40,22 @@ export default function CardStack() {
 	}
 	return (
 		<View className="w-full px-6 gap-6">
-			<Card key={item.id} className="border-gray-200 bg-white">
-				<View className="bg-blush aspect-[4/5] justify-center items-center rounded-xl mx-6">
+			<View
+				key={item.id}
+				className="relative w-full aspect-[350/461] rounded-3xl overflow-hidden">
+				<View className="absolute inset-0 bg-blush justify-center items-center">
 					<Text className="text-6xl text-wine">{item.name[0]}</Text>
 				</View>
-				<CardHeader>
-					<CardTitle className="text-xl text-gray-900">
+				<View className="absolute bottom-6 left-[22px] right-[22px] gap-2">
+					<Text className="text-[34px] text-white">
 						{item.name}, {item.age}
-					</CardTitle>
-				</CardHeader>
-				<CardContent className="gap-2">
-					<Text className="text-gray-700">{item.bio}</Text>
-					<Text className="text-gray-500">{item.interests.join(" . ")}</Text>
-				</CardContent>
-			</Card>
+					</Text>
+					<Text className="text-[13px] text-white">
+						{item.interests.join(" · ")}
+					</Text>
+					<Text className="text-sm text-white">{item.bio}</Text>
+				</View>
+			</View>
 			<View className="flex-row justify-center gap-8">
 				<Pressable onPress={handlePass}>
 					<Text>Pass</Text>
