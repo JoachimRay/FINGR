@@ -1,17 +1,23 @@
 [
-  {
-    "id": 1,
-    "name": "John Doe",
-    "interests": ["reading", "traveling", "coding"]
-  },
-  {
-    "id": 2,
-    "name": "Jane Smith",
-    "interests": ["painting", "music", "hiking"]
-  },
-  {
-    "id": 3,
-    "name": "Alice Johnson",
-    "interests": ["photography", "cooking", "yoga"]
-  }
+	{
+		"id": 1,
+		"name": "John Doe",
+		"age": 27,
+		"bio": "I love reading and watching Elijah Bes across the seat",
+		"interests": ["reading", "traveling", "coding"]
+	},
+	{
+		"id": 2,
+		"name": "Jane Smith",
+		"age": 28,
+		"bio": "Animes, Manga, Dave",
+		"interests": ["painting", "music", "hiking"]
+	},
+	{
+		"id": 3,
+		"name": "Alice Johnson",
+		"age": 29,
+		"bio": "Cofee and some good music makes the dream work",
+		"interests": ["photography", "cooking", "yoga"]
+	}
 ]
