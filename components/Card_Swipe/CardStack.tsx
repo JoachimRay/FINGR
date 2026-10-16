@@ -42,14 +42,17 @@ export default function CardStack() {
 	return (
 		<View className="w-full px-6 gap-6">
 			<Card key={item.id} className="border-gray-200 bg-white">
+				<View className="bg-blush aspect-[4/5] justify-center items-center rounded-xl mx-6">
+					<Text className="text-6xl text-wine">{item.name[0]}</Text>
+				</View>
 				<CardHeader>
 					<CardTitle className="text-xl text-gray-900">
 						{item.name}, {item.age}
 					</CardTitle>
 				</CardHeader>
-				<CardContent>
+				<CardContent className="gap-2">
 					<Text className="text-gray-700">{item.bio}</Text>
-					<Text className="text-gray-700">{item.interests.join(" . ")}</Text>
+					<Text className="text-gray-500">{item.interests.join(" . ")}</Text>
 				</CardContent>
 			</Card>
 			<View className="flex-row justify-center gap-8">
