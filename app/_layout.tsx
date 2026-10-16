@@ -1,4 +1,8 @@
+import { Inter_400Regular } from "@expo-google-fonts/inter";
+import { Lora_400Regular, useFonts } from "@expo-google-fonts/lora";
 import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
 import "react-native-reanimated";
 import "./global.css";
 
@@ -7,6 +11,21 @@ export {
   ErrorBoundary
 } from "expo-router";
 
+// Keep the splash screen visible until fonts are ready.
+SplashScreen.preventAutoHideAsync();
+
 export default function RootLayout() {
+  const [loaded, error] = useFonts({ Lora_400Regular, Inter_400Regular });
+
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  if (!loaded && !error) {
+    return null;
+  }
+
   return <Stack screenOptions={{ headerShown: false }} />;
 }

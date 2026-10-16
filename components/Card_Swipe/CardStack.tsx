@@ -1,3 +1,5 @@
+import {VioletIcon} from "@/components/icons/VioletIcon";
+import {XIcon} from "@/components/icons/XIcon";
 import {Text} from "@/components/ui/text";
 
 import {LinearGradient} from "expo-linear-gradient";
@@ -53,7 +55,7 @@ export default function CardStack() {
 					style={StyleSheet.absoluteFill}
 				/>
 				<View className="absolute bottom-6 left-[22px] right-[22px] gap-2">
-					<Text className="text-[34px] text-white">
+					<Text className="font-serif text-[34px] text-white">
 						{item.name}, {item.age}
 					</Text>
 					<Text className="text-[13px] text-white">
@@ -62,12 +64,26 @@ export default function CardStack() {
 					<Text className="text-sm text-white">{item.bio}</Text>
 				</View>
 			</View>
-			<View className="flex-row justify-center gap-8">
-				<Pressable onPress={handlePass}>
-					<Text>Pass</Text>
+			<View className="flex-row justify-center gap-[38px]">
+				<Pressable
+					onPress={handlePass}
+					accessibilityRole="button"
+					accessibilityLabel={`Pass on ${item.name}`}
+					className="items-center gap-[5px] active:opacity-70">
+					<View className="w-[60px] h-[60px] rounded-full bg-white border border-[#EAD3C8] justify-center items-center">
+						<XIcon />
+					</View>
+					<Text className="text-xs text-ink">Pass</Text>
 				</Pressable>
-				<Pressable onPress={handleViolet}>
-					<Text>Violet</Text>
+				<Pressable
+					onPress={handleViolet}
+					accessibilityRole="button"
+					accessibilityLabel={`Send a violet to ${item.name}`}
+					className="items-center gap-[5px] active:opacity-70">
+					<View className="w-[60px] h-[60px] rounded-full bg-violet justify-center items-center">
+						<VioletIcon />
+					</View>
+					<Text className="text-xs text-ink">Violet</Text>
 				</Pressable>
 			</View>
 		</View>

@@ -14,6 +14,11 @@ module.exports = {
 				blush: "#F0C9B7",
 				cream: "#F8DAC8",
 				shell: "#FFF7F1",
+				ink: "#361B24",
+			},
+			fontFamily: {
+				serif: ["Lora_400Regular"],
+				sans: ["Inter_400Regular"],
 			},
 		},
 	},
