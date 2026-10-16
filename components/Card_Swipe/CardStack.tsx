@@ -1,7 +1,8 @@
 import {Text} from "@/components/ui/text";
 
+import {LinearGradient} from "expo-linear-gradient";
 import {useState} from "react";
-import {Pressable, View} from "react-native";
+import {Pressable, StyleSheet, View} from "react-native";
 
 import dummy from "@/data/dummy.json";
 import type {Profile} from "@/types/profile";
@@ -46,6 +47,11 @@ export default function CardStack() {
 				<View className="absolute inset-0 bg-blush justify-center items-center">
 					<Text className="text-6xl text-wine">{item.name[0]}</Text>
 				</View>
+				<LinearGradient
+					colors={["rgba(255,255,255,0)", "rgba(49,0,13,0.81)"]}
+					locations={[0.35, 1]}
+					style={StyleSheet.absoluteFill}
+				/>
 				<View className="absolute bottom-6 left-[22px] right-[22px] gap-2">
 					<Text className="text-[34px] text-white">
 						{item.name}, {item.age}
